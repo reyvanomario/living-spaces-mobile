@@ -16,3 +16,21 @@ Jawab: mengatur ulang state widget yang berubah, yang terdampak adalah variabel-
 
 4. Jelaskan perbedaan antara const dengan final.
 Jawab: variabel const nilainya bisa diubah-ubah, sedangkan final sudah ditetapkan di awal dan tidak bisa diubah-ubah
+
+5. Jelaskan bagaimana cara kamu mengimplementasikan checklist-checklist di atas.
+Jawab:
+a. Membuat sebuah program Flutter baru dengan tema E-Commerce yang sesuai dengan tugas-tugas sebelumnya.
+Membuat direktori untuk menyimpan project dengan nama yang sama (living-spaces) lalu jalankan 'flutter create living_spaces'
+
+b. Membuat tiga tombol sederhana dengan ikon dan teks.
+Di menu.dart, menambahkan List<ItemHomepage> yang berisi nama tombol dan icon nya
+
+c. Mengimplementasikan warna-warna yang berbeda untuk setiap tombol (Lihat Daftar Produk, Tambah Produk, dan Logout).
+Menambahkan parameter color di constructor ItemHomepage dan di build pada class ItemCard, mengatur atribut color menjadi item.color
+
+d.Memunculkan Snackbar dengan tulisan:
+ "Kamu telah menekan tombol Lihat Daftar Produk" ketika tombol Lihat Daftar Produk ditekan.
+ "Kamu telah menekan tombol Tambah Produk" ketika tombol Tambah Produk ditekan.
+ "Kamu telah menekan tombol Logout" ketika tombol Logout ditekan.
+
+Di class ItemCard, menambahkan aksi ketika tombolnya berstatus onTap yaitu menampilkan snackbar dengan tulisan 'Kamu telah menekan tombol <nama_tombol>'

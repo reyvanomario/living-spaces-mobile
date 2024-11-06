@@ -6,9 +6,9 @@ class MyHomePage extends StatelessWidget {
   final String className = 'PBP E'; // Kelas
 
   final List<ItemHomepage> items = [
-      ItemHomepage("Lihat Daftar Produk", Icons.format_list_bulleted),
-      ItemHomepage("Tambah Produk", Icons.add),
-      ItemHomepage("Logout", Icons.logout),
+      ItemHomepage("Lihat Daftar Produk", Icons.format_list_bulleted, const Color.fromARGB(255, 17, 52, 80)),
+      ItemHomepage("Tambah Produk", Icons.add, const Color.fromARGB(255, 17, 95, 20)),
+      ItemHomepage("Logout", Icons.logout, const Color.fromARGB(255, 169, 36, 27)),
   ];
 
   MyHomePage({super.key});
@@ -129,8 +129,9 @@ class InfoCard extends StatelessWidget {
 class ItemHomepage {
     final String name;
     final IconData icon;
+    final Color color;
 
-    ItemHomepage(this.name, this.icon);
+    ItemHomepage(this.name, this.icon, this.color);
 }
 
 class ItemCard extends StatelessWidget {
@@ -144,7 +145,7 @@ class ItemCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Material(
       // Menentukan warna latar belakang dari tema aplikasi.
-      color: Theme.of(context).colorScheme.secondary,
+      color: item.color,
       // Membuat sudut kartu melengkung.
       borderRadius: BorderRadius.circular(12),
       
