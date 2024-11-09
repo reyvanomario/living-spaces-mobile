@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:living_spaces/productentry_form.dart';
+import 'package:living_spaces/widgets/left_drawer.dart';
 
 class MyHomePage extends StatelessWidget {
   final String npm = '2306275613'; // NPM
@@ -29,6 +31,7 @@ class MyHomePage extends StatelessWidget {
         // Warna latar belakang AppBar diambil dari skema warna tema aplikasi.
         backgroundColor: Theme.of(context).colorScheme.primary,
       ),
+      drawer: const LeftDrawer(),
       // Body halaman dengan padding di sekelilingnya.
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -158,6 +161,13 @@ class ItemCard extends StatelessWidget {
             ..showSnackBar(
               SnackBar(content: Text("Kamu telah menekan tombol ${item.name}"))
             );
+            if (item.name == "Tambah Produk") {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                  builder: (context) => const ProductEntryFormPage(),
+              ));
+          }
         },
         // Container untuk menyimpan Icon dan Text
         child: Container(
