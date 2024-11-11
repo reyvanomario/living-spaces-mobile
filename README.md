@@ -34,3 +34,21 @@ d.Memunculkan Snackbar dengan tulisan:
  "Kamu telah menekan tombol Logout" ketika tombol Logout ditekan.
 
 Di class ItemCard, menambahkan aksi ketika tombolnya berstatus onTap yaitu menampilkan snackbar dengan tulisan 'Kamu telah menekan tombol <nama_tombol>'
+
+
+
+PERTANYAAN TUGAS 8
+1. Apa kegunaan const di Flutter? Jelaskan apa keuntungan ketika menggunakan const pada kode Flutter. Kapan sebaiknya kita menggunakan const, dan kapan sebaiknya tidak digunakan?
+Jawab: const digunakan untuk variabel yang sudah diketahui pada saat proses compile. sebaiknya tidak digunakan pada variabel yang kita ingin bisa diubah pada saat program berjalan.
+
+2. Jelaskan dan bandingkan penggunaan Column dan Row pada Flutter. Berikan contoh implementasi dari masing-masing layout widget ini!
+Jawab: row untuk mengatur tata letak widget secara horizontal, contohnya infocard di menu.dart yang berisi nama, npm, kelas. column untuk mengatur tata letak widget secara vertikal, contohnya menu-menu di leftdrawer.
+
+3. Sebutkan apa saja elemen input yang kamu gunakan pada halaman form yang kamu buat pada tugas kali ini. Apakah terdapat elemen input Flutter lain yang tidak kamu gunakan pada tugas ini? Jelaskan!
+Jawab: elemen input yang saya gunakan adalah TextFormField. Masih sangat banyak elemen input lain yang tidak digunakan pada tugas ini seperti radio, checkbox, switch, dan lain-lain.
+
+4. Bagaimana cara kamu mengatur tema (theme) dalam aplikasi Flutter agar aplikasi yang dibuat konsisten? Apakah kamu mengimplementasikan tema pada aplikasi yang kamu buat?
+Jawab: saya mengatur tema aplikasi saya bernuansa biru.
+
+5. Bagaimana cara kamu menangani navigasi dalam aplikasi dengan banyak halaman pada Flutter?
+Jawab: menggunakan Navigator.push untuk berpindah dan Navigator.pop untuk kembali ke halaman sebelumnya.

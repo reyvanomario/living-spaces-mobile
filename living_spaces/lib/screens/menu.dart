@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import 'package:living_spaces/widgets/left_drawer.dart';
 import 'package:living_spaces/widgets/product_card.dart';
 
