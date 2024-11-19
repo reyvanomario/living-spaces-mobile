@@ -15,7 +15,7 @@ class ProductPage extends StatefulWidget {
 class _ProductPageState extends State<ProductPage> {
   Future<List<Product>> fetchProduct(CookieRequest request) async {
     
-    final response = await request.get('http://10.0.2.2/json/');
+    final response = await request.get('http://127.0.0.1:8000/json/');
     
     // Melakukan decode response menjadi bentuk json
     var data = response;
@@ -66,7 +66,7 @@ class _ProductPageState extends State<ProductPage> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        "${snapshot.data![index].fields.product}",
+                        "${snapshot.data![index].fields}",
                         style: const TextStyle(
                           fontSize: 18.0,
                           fontWeight: FontWeight.bold,
