@@ -66,22 +66,21 @@ class _ProductPageState extends State<ProductPage> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        "${snapshot.data![index].fields}",
+                        "${snapshot.data![index].fields.name}",
                         style: const TextStyle(
                           fontSize: 18.0,
                           fontWeight: FontWeight.bold,
                         ),
                       ),
+
                       const SizedBox(height: 10),
-                      Text("${snapshot.data![index].fields.name}"),
+                      Text("Harga: ${snapshot.data![index].fields.price}"),
                       const SizedBox(height: 10),
-                      Text("${snapshot.data![index].fields.price}"),
+                      Text("Deskripsi: ${snapshot.data![index].fields.description}"),
                       const SizedBox(height: 10),
-                      Text("${snapshot.data![index].fields.description}"),
+                      Text("Stok: ${snapshot.data![index].fields.stock}"),
                       const SizedBox(height: 10),
-                      Text("${snapshot.data![index].fields.stock}"),
-                      const SizedBox(height: 10),
-                      Text("${snapshot.data![index].fields.category}"),
+                      Text("Kategori: ${snapshot.data![index].fields.category}"),
                     ],
                   ),
                 ),

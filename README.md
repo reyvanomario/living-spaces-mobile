@@ -52,3 +52,56 @@ Jawab: saya mengatur tema aplikasi saya bernuansa biru.
 
 5. Bagaimana cara kamu menangani navigasi dalam aplikasi dengan banyak halaman pada Flutter?
 Jawab: menggunakan Navigator.push untuk berpindah dan Navigator.pop untuk kembali ke halaman sebelumnya.
+
+
+PERTANYAAN TUGAS 9
+1. Jelaskan mengapa kita perlu membuat model untuk melakukan pengambilan ataupun pengiriman data JSON? Apakah akan terjadi error jika kita tidak membuat model terlebih dahulu?
+Jawab: agar data bisa direpresentasikan secara terstruktur. jika tidak membuat model, belum tentu akan error tapi akan lebih sulit dalam mengolah data.
+
+2. Jelaskan fungsi dari library http yang sudah kamu implementasikan pada tugas ini
+Jawab: untuk melakukan perintah http request
+
+3. Jelaskan fungsi dari CookieRequest dan jelaskan mengapa instance CookieRequest perlu untuk dibagikan ke semua komponen di aplikasi Flutter.
+Jawab: CookieRequest berfungsi untuk mengelola dan menyimpan cookie secara lokal, perlu untuk dibagikan ke semua komponen agar menghindari redundansi karena setiap komponen tidak perlu mengelola session secara tersendiri.
+
+4. Jelaskan mekanisme pengiriman data mulai dari input hingga dapat ditampilkan pada Flutter.
+Jawab: 
+- Data diambil dari field misalnya TextFormField
+- Dilakukan validasi pada data yang ambil dengan validator
+- Data yang sudah divalidasi dikirim ke server (di tugas ini ke server django)
+- Data diambil dari server, lalu disimpan ke state
+- Data ditampilkan dalam widget flutter
+
+5. Jelaskan mekanisme autentikasi dari login, register, hingga logout. Mulai dari input data akun pada Flutter ke Django hingga selesainya proses autentikasi oleh Django dan tampilnya menu pada Flutter.
+Jawab: 
+Register:
+- User input username dan passwordnya lalu dikirimkan ke url "http://127.0.0.1:8000/auth/register/". Berhasil atau tidaknya register ditentukan di django dan di flutter akan ditampilkan pesan sesuai dengan response yang diberikan django di fungsi await request.postJson
+
+Login:
+- User input username dan passwordnya lalu dikirimkan ke url "http://127.0.0.1:8000/auth/login/". Berhasil atau tidaknya login ditentukan di django dan di flutter akan ditampilkan pesan sesuai dengan output di fungsi "context.watch<CookieRequest>();". Jika login berhasil, pengguna akan diteruskan ke halaman utama aplikasi
+
+Logout:
+- Memanggil url "http://127.0.0.1:8000/auth/logout/" dan menjalankan fungsi logout di django serta menampilkan pesan logout berdasarkan respons di fungsi "await request.logout".
+
+6. Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step! (bukan hanya sekadar mengikuti tutorial).
+Jawab:
+a. Mengimplementasikan fitur registrasi akun pada proyek tugas Flutter.
+Membuat fungsi register di proyek django di app authentication, melakukan routing, lalu membuat folder baru di proyek flutter bernama screens dan di dalamnya membuat halaman register.dart. Setelah itu akan mengirim request register ke django dan django akan memberikan respons.
+
+b. Membuat halaman login pada proyek tugas Flutter.
+Membuat fungsi login di proyek django di app authentication, melakukan routing, lalu membuat halaman register.dart di folder screens di proyek flutter. Setelah itu akan mengirim request untuk login ke django dan django akan memberikan respons apakah login berhasil atau tidak.
+
+c. Mengintegrasikan sistem autentikasi Django dengan proyek tugas Flutter.
+Memanggil fungsi  await request.postJson(...) yang mengirimkan request ke parameter url yaitu django di localhost
+
+d. Membuat model kustom sesuai dengan proyek aplikasi Django.
+Mengambil data dalam bentuk json yang ada di proyek django, lalu mengubah ke dalam bahasa dart menggunakan bantuan website Quicktype dan memasukkannya ke file product_entry.dart di folder baru bernama models.
+
+e. Membuat halaman yang berisi daftar semua item yang terdapat pada endpoint JSON di Django yang telah kamu deploy.
+Membuat file list_productentry lalu menampilkan tiap fields product di widget Text dengan cara Text("${snapshot.data![index].fields.name}") untuk fields name, dan fields-fields lainnya.
+
+f. Membuat halaman detail untuk setiap item yang terdapat pada halaman daftar Item.
+
+g. Melakukan filter pada halaman daftar item dengan hanya menampilkan item yang terasosiasi dengan pengguna yang login.
+Mengambil data produk dengan fungsi fetchProduct ke url http://127.0.0.1:8000/json/ dan mengonversi ke list object Product
+
